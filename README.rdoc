@@ -1,0 +1,27 @@
+= banking_data
+
+* {Homepage}[https://rubygems.org/gems/banking_data]
+* {Documentation}[http://rubydoc.info/gems/banking_data/frames]
+* {Email}[mailto:frank.eckert at boost-project.com]
+
+== Description
+
+TODO: Description
+
+== Features
+
+== Examples
+
+  require 'banking_data'
+
+== Requirements
+
+== Install
+
+  $ gem install banking_data
+
+== Copyright
+
+Copyright (c) 2013 Frank C. Eckert
+
+See LICENSE.txt for details.
