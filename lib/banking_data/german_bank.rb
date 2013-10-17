@@ -6,6 +6,10 @@ class BankingData::GermanBank < BankingData::Bank
   attr_accessor :bic, :blz
 
   def self.all
+    @@all ||= get_all
+  end
+
+  def self.get_all
     banks = []
     File.open(file).each_line do |line|
       blz = line[0..7]

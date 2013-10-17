@@ -6,6 +6,10 @@ class BankingData::SwissBank < BankingData::Bank
   attr_accessor :bic
 
   def self.all
+    @@all ||= get_all
+  end
+
+  def self.get_all
     banks = []
     File.read(file, encoding: 'iso-8859-1').lines.each do |line|
       kennzeichen = line[7..10]

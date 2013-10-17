@@ -7,6 +7,10 @@ class BankingData::AustrianBank < BankingData::Bank
   attr_accessor :bic
 
   def self.all
+    @@all ||= get_all
+  end
+
+  def self.get_all
     banks = []
     SmarterCSV.process(file, opts).each do |line|
       bic = line[:'swift-code'].try(:gsub, /"/, '')
