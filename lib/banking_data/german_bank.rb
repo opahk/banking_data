@@ -15,10 +15,6 @@ class BankingData::GermanBank
     banks
   end
 
-  def self.only(*attributes)
-    all.map { |bank| attributes.map { |attr| bank.send(attr) } }
-  end
-
   def self.file
     File.dirname(__FILE__) + '/../../data/BLZ_20130909.txt'
   end
