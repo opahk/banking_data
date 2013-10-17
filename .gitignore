@@ -3,3 +3,4 @@ html/
 pkg/
 vendor/cache/*.gem
 coverage
+*.gem
