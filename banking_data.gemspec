@@ -21,6 +21,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'activemodel'
   gem.add_dependency 'smarter_csv'
   gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'rake'
   gem.add_development_dependency 'coveralls'
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rubocop'
