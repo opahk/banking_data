@@ -6,4 +6,3 @@ module BankingData
     end
   end
 end
-

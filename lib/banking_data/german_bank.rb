@@ -10,7 +10,7 @@ class BankingData::GermanBank < BankingData::Bank
     File.open(file).each_line do |line|
       blz = line[0..7]
       bic = line[139..149]
-      banks << self.new(bic: bic, blz: blz)
+      banks << new(bic: bic, blz: blz)
     end
     banks
   end

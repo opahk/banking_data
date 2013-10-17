@@ -11,7 +11,7 @@ class BankingData::SwissBank < BankingData::Bank
       kennzeichen = line[7..10]
       if kennzeichen == '0000'
         bic = line[284..294]
-        banks << self.new(bic: bic)
+        banks << new(bic: bic)
       end
     end
     banks
