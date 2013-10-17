@@ -1,6 +1,6 @@
 require 'active_support/core_ext/object/blank'
 
-class BankingData::SwissBank
+class BankingData::SwissBank < BankingData::Bank
   include ActiveModel::Model
 
   attr_accessor :bic

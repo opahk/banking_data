@@ -11,6 +11,8 @@ module BankingData
         AustrianBank.where(options)
       elsif locale == 'CH' || locale == :ch
         SwissBank.where(options)
+      else
+        self
       end
     end
 

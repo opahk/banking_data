@@ -1,4 +1,5 @@
 require 'active_model'
+require 'smarter_csv'
 require 'banking_data/version'
 require 'banking_data/bank'
 require 'banking_data/german_bank'
