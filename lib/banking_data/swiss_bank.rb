@@ -3,7 +3,7 @@ require 'active_support/core_ext/object/blank'
 class BankingData::SwissBank < BankingData::Bank
   include ActiveModel::Model
 
-  attr_accessor :bic
+  attr_accessor :bic, :blz
 
   def self.all
     @@all ||= get_all
@@ -14,8 +14,9 @@ class BankingData::SwissBank < BankingData::Bank
     File.read(file, encoding: 'iso-8859-1').lines.each do |line|
       kennzeichen = line[7..10]
       if kennzeichen == '0000'
+        blz = line[2..6].strip
         bic = line[284..294]
-        banks << new(bic: bic)
+        banks << new(bic: bic, blz: blz)
       end
     end
     banks

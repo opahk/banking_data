@@ -4,7 +4,7 @@ require 'active_support/core_ext/object/try'
 class BankingData::AustrianBank < BankingData::Bank
   include ActiveModel::Model
 
-  attr_accessor :bic
+  attr_accessor :bic, :blz
 
   def self.all
     @@all ||= get_all
@@ -13,8 +13,11 @@ class BankingData::AustrianBank < BankingData::Bank
   def self.get_all
     banks = []
     SmarterCSV.process(file, opts).each do |line|
-      bic = line[:'swift-code'].try(:gsub, /"/, '')
-      banks << new(bic: bic)
+      if line[:kennzeichen] == 'Hauptanstalt'
+        blz = line[:bankleitzahl].try(:gsub, /"/, '')
+        bic = line[:'swift-code'].try(:gsub, /"/, '')
+        banks << new(bic: bic, blz: blz)
+      end
     end
     banks
   end
