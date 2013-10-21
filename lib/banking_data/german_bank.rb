@@ -3,23 +3,32 @@ require 'active_support/core_ext/object/blank'
 class BankingData::GermanBank < BankingData::Bank
   include ActiveModel::Model
 
+  LOCALE = :de
+
   attr_accessor :bic, :blz
 
-  def self.all
-    @@all ||= get_all
-  end
+  class << self
 
-  def self.get_all
-    banks = []
-    File.open(file).each_line do |line|
-      blz = line[0..7]
-      bic = line[139..149]
-      banks << new(bic: bic, blz: blz)
+    delegate :where, :only, to: :query
+
+    def all
+      @@all ||= get_all
     end
-    banks
-  end
 
-  def self.file
-    File.dirname(__FILE__) + '/../../data/BLZ_20130909.txt'
+    private
+
+      def get_all
+        banks = []
+        File.open(file).each_line do |line|
+          blz = line[0..7]
+          bic = line[139..149]
+          banks << new(bic: bic, blz: blz)
+        end
+        banks
+      end
+
+      def file
+        File.dirname(__FILE__) + '/../../data/BLZ_20130909.txt'
+      end
   end
 end

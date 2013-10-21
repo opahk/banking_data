@@ -15,6 +15,8 @@ module BankingData
           expect(GermanBank.only(:blz).map(&:first)).to include(blz)
           expect(Bank.where(locale: :de, blz: blz).only(:blz).first)
             .to eq([blz])
+          expect(Bank.where(blz: blz, locale: :de).only(:blz).last)
+            .to eq([blz])
         end
       end
     end
