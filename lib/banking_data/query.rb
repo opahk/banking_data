@@ -3,7 +3,7 @@ require 'active_support/core_ext/class/subclasses'
 module BankingData
   class Query
 
-    delegate :each, :map, :first, :last, to: :to_a
+    delegate :each, :flatten, :map, :first, :last, to: :to_a
     attr_accessor :options, :attributes, :locale
 
     def initialize(options, only = nil)
