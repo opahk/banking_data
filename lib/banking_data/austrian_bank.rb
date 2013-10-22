@@ -2,7 +2,9 @@ require 'active_support/core_ext/object/blank'
 require 'active_support/core_ext/object/try'
 
 class BankingData::AustrianBank < BankingData::Bank
-  include ActiveModel::Model
+  extend ActiveModel::Naming
+  include ActiveModel::Conversion
+  include ActiveModel::AttributeMethods
 
   LOCALE = :at
 

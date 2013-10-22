@@ -1,7 +1,9 @@
 require 'active_support/core_ext/object/blank'
 
 class BankingData::SwissBank < BankingData::Bank
-  include ActiveModel::Model
+  extend ActiveModel::Naming
+  include ActiveModel::Conversion
+  include ActiveModel::AttributeMethods
 
   LOCALE = :ch
 
