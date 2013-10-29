@@ -1,4 +1,5 @@
 require 'active_support/core_ext/class/subclasses'
+require 'active_support/core_ext/module/delegation'
 
 module BankingData
   class Query
