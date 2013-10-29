@@ -8,7 +8,7 @@ rvm:
   - rbx-19mode
   - rbx-2.0.0
   - rbx-2.1.1
-gemfiles:
+gemfile:
   - gemfiles/rails_3.0.gemfile
   - gemfiles/rails_3.1.gemfile
   - gemfiles/rails_3.2.gemfile
