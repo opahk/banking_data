@@ -26,4 +26,9 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rubocop'
   gem.add_development_dependency 'appraisal'
+
+  if ENV['RUBY_VERSION'] =~ /rbx/
+    gem.add_dependency 'rubysl'
+    gem.add_development_dependency 'rubinius-coverage'
+  end
 end
