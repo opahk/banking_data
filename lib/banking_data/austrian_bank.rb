@@ -13,6 +13,7 @@ class BankingData::AustrianBank < BankingData::Bank
   class << self
 
     delegate :where, :only, to: :query
+    delegate :map, :each, to: :all
 
     def all
       @@all ||= get_all
@@ -21,13 +22,13 @@ class BankingData::AustrianBank < BankingData::Bank
     def get_all
       banks = []
       SmarterCSV.process(file, opts).each do |line|
-        if line[:kennzeichen] == 'Hauptanstalt'
-          blz = line[:bankleitzahl].try(:gsub, /"/, '')
-          bic = line[:'swift-code'].try(:gsub, /"/, '')
+        blz = line[:bankleitzahl].try(:gsub, /"/, '')
+        bic = line[:'swift-code'].try(:gsub, /"/, '')
+        if blz && bic
           banks << new(bic: bic, blz: blz)
         end
       end
-      banks
+      banks.uniq
     end
 
     private

@@ -4,3 +4,5 @@ pkg/
 vendor/cache/*.gem
 coverage
 *.gem
+.ruby-version
+gemfiles/*.lock

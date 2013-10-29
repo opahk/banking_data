@@ -10,9 +10,11 @@ module BankingData
             .to include(bic)
         end
       end
-      ['76350000', '37040044'].each do |blz|
+
+      ['76350000', '37040044', '40050150'].each do |blz|
         it "includes #{blz}" do
           expect(GermanBank.only(:blz).map(&:first)).to include(blz)
+          expect(GermanBank.map(&:blz)).to include(blz)
           expect(GermanBank.only(:blz).flatten).to include(blz)
           expect(Bank.where(locale: :de, blz: blz).only(:blz).first)
             .to eq([blz])

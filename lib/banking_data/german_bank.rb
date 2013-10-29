@@ -12,6 +12,7 @@ class BankingData::GermanBank < BankingData::Bank
   class << self
 
     delegate :where, :only, to: :query
+    delegate :map, :each, to: :all
 
     def all
       @@all ||= get_all
@@ -21,12 +22,12 @@ class BankingData::GermanBank < BankingData::Bank
 
       def get_all
         banks = []
-        File.open(file).each_line do |line|
+        File.open(file, 'r:iso-8859-1').each_line do |line|
           blz = line[0..7]
           bic = line[139..149]
           banks << new(bic: bic, blz: blz)
         end
-        banks
+        banks.uniq
       end
 
       def file

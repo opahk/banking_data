@@ -12,6 +12,7 @@ class BankingData::SwissBank < BankingData::Bank
   class << self
 
     delegate :where, :only, to: :query
+    delegate :map, :each, to: :all
 
     def all
       @@all ||= get_all
@@ -27,7 +28,7 @@ class BankingData::SwissBank < BankingData::Bank
           banks << new(bic: bic, blz: blz)
         end
       end
-      banks
+      banks.uniq
     end
 
     def file
