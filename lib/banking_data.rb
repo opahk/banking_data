@@ -1,5 +1,5 @@
 require 'active_model'
-require 'smarter_csv'
+require 'smarter_csv', "~> 1.1.0"
 require 'banking_data/version'
 require 'banking_data/query'
 require 'banking_data/bank'

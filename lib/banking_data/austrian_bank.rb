@@ -23,7 +23,7 @@ class BankingData::AustrianBank < BankingData::Bank
       banks = []
       SmarterCSV.process(file, opts).each do |line|
         blz = line[:bankleitzahl].try(:gsub, /"/, '')
-        bic = line[:'swift-code'].try(:gsub, /"/, '')
+        bic = line[:'swift_code'].try(:gsub, /"/, '')
         if blz && bic
           banks << new(bic: bic, blz: blz)
         end
