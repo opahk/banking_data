@@ -6,7 +6,7 @@ rvm:
   - ruby-head
   - jruby-19mode
   - jruby-head
-  - rbx-2.2.10
+  - rbx-2.5.8
 gemfile:
   - gemfiles/rails_3.0.gemfile
   - gemfiles/rails_3.1.gemfile
