@@ -7,6 +7,11 @@
 Banking data (including SWIFT-codes/BIC) for Germany, Austria, Switzerland.
 
 ## CHANGELOG
+
+### 0.6.0
+
+* Update SWIFT data of austrian banks
+
 ### 0.5.1
 * fix compatibility with `smarter_csv` >= 1.1.0
 `smarter_csv` now turns `-` into `_` in headers, which broke the
