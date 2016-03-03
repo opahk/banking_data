@@ -6,3 +6,7 @@ coverage
 *.gem
 .ruby-version
 gemfiles/*.lock
+.bundle
+vendor/bundle
+*.swp
+*~
