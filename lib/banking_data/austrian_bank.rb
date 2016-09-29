@@ -41,8 +41,7 @@ class BankingData::AustrianBank < BankingData::Bank
       def opts
         {
           col_sep: ';',
-          file_encoding: 'iso-8859-1',
-          force_simple_split: true
+          file_encoding: 'iso-8859-1'
         }
       end
   end
