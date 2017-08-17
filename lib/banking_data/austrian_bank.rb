@@ -35,7 +35,7 @@ class BankingData::AustrianBank < BankingData::Bank
 
       def file
         File.dirname(__FILE__) +
-          '/../../data/SEPA-ZV-VZ_gesamt_de_1475136580352.csv'
+          '/../../data/SEPA-ZV-VZ_gesamt_de_1502983225066.csv'
       end
 
       def opts
