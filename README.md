@@ -8,6 +8,10 @@ Banking data (including SWIFT-codes/BIC) for Germany, Austria, Switzerland.
 
 ## CHANGELOG
 
+### 0.8.0
+
+* Update data of swiss banks (bcbankenstamm.txt)
+
 ### 0.7.2
 
 * Update SWIFT data of austrian, german and swiss banks
