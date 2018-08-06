@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/opahk/banking_data/badge.png?branch=master)](https://coveralls.io/r/opahk/banking_data?branch=master)
 [![Code Climate](https://codeclimate.com/github/opahk/banking_data.png)](https://codeclimate.com/github/opahk/banking_data)
 
-Banking data (including SWIFT-codes/BIC) for Germany, Austria, Switzerland.
+Banking data (including SWIFT-codes/BIC) for Germany, Austria, Switzerland, Netherlands.
 
 ## CHANGELOG
 
