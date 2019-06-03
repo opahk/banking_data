@@ -27,6 +27,8 @@ module BankingData
     end
 
     def to_a
+      return [] if bank.nil?
+
       data = bank.all
         .select { |bank| @options.map { |k, v| bank.send(k) == v }.all? }
       if @attributes
