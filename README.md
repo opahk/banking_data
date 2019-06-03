@@ -8,6 +8,10 @@ Banking data (including SWIFT-codes/BIC) for Germany, Austria, Switzerland, Neth
 
 ## CHANGELOG
 
+### 0.9.1
+
+* bugfix: return empty array, when bank not known
+
 ### 0.9.0
 
 * add SWIFT data of dutch banks
