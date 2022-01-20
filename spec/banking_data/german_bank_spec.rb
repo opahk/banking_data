@@ -23,11 +23,18 @@ module BankingData
         end
       end
 
-      it 'all bics are blank or have 11 non-white-space characters' do
-        # to prevent errors through shifted characters, e.g. due tue encoding
-        # errors
+      it 'all bics are blank or look like bics' do
         bics = GermanBank.only(:bic).map(&:first)
-        expect(bics.select{ |bic| ![0,11].include?(bic.delete(' ').length) }).
+        # regular expression: the bic should have 11 characters, that are either
+        # all white space or consist of capital letters and digits
+        expect(bics.select{ |bic| !( bic =~  /\A(\s|([A-Z]|\d)){11}\z/ ) }).
+          to eq([])
+      end
+
+      it 'all blz except two exceptions consist of 8 digits' do
+        exceptions = []
+        blzs = GermanBank.only(:blz).map(&:first) - exceptions
+        expect(blzs.select{ |blz| !( blz =~  /\A\d{8}\z/ ) }).
           to eq([])
       end
     end
