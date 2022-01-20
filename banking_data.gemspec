@@ -17,11 +17,9 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
 
-  gem.required_ruby_version = '< 3'
-
   gem.add_dependency 'activesupport'
   gem.add_dependency 'activemodel'
-  gem.add_dependency 'smarter_csv', '~> 1.1.0'
+  gem.add_dependency 'smarter_csv', '>= 1.2.9'
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'coveralls'
