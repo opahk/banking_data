@@ -12,6 +12,7 @@ Banking data (including SWIFT-codes/BIC) for Germany, Austria, Switzerland, Neth
 
 * update smarter_csv gem to allow ruby3
 * update banking data
+* fix dutch name bank name and identifiers
 
 ### 0.9.4
 

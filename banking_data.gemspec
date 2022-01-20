@@ -5,8 +5,8 @@ require File.expand_path('../lib/banking_data/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.name          = 'banking_data'
   gem.version       = BankingData::VERSION
-  gem.summary       = %q{Banking data for German, Austrian and Swiss banks}
-  gem.description   = %q{This gem exposes the official banking data of the respective national banks of Germany, Austria and Switzerland, including bank codes and SWIFT-codes/BICs.}
+  gem.summary       = %q{Banking data for German, Austrian, Dutch and Swiss banks}
+  gem.description   = %q{This gem exposes the official banking data of the respective national banks of Germany, Austria, Netherlands and Switzerland, including bank codes and SWIFT-codes/BICs.}
   gem.license       = 'MIT'
   gem.authors       = ['Frank C. Eckert']
   gem.email         = 'frank.eckert@boost-project.com'
