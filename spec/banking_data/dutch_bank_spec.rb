@@ -20,5 +20,23 @@ module BankingData
       expect(bics.select{ |bic| !( bic =~  /\A(\s|([A-Z]|\d)){8}\z/ ) }).
         to eq([])
     end
+
+    it 'all bank identifiers consist of 4 capital letters' do
+      exceptions = []
+      bank_ids = DutchBank.only(:bank_id).map(&:first) - exceptions
+      # regular expression: the bic should have 8 characters, that are either
+      # all white space or consist of capital letters and digits
+      expect(bank_ids.select{ |bank_id| !( bank_id =~  /\A[A-Z]{4}\z/ ) }).
+        to eq([])
+    end
+
+    it 'all bank names have at least one letter' do
+      exceptions = []
+      names = DutchBank.only(:name).map(&:first) - exceptions
+      # regular expression: the bic should have 8 characters, that are either
+      # all white space or consist of capital letters and digits
+      expect(names.select{ |name| !( name =~  /\A.*[a-zA-Z]+.*\z/ ) }).
+        to eq([])
+    end
   end
 end
