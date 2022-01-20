@@ -22,6 +22,14 @@ module BankingData
             .to eq([blz])
         end
       end
+
+      it 'all bics are blank or have 11 non-white-space characters' do
+        # to prevent errors through shifted characters, e.g. due tue encoding
+        # errors
+        bics = GermanBank.only(:bic).map(&:first)
+        expect(bics.select{ |bic| ![0,11].include?(bic.delete(' ').length) }).
+          to eq([])
+      end
     end
   end
 end
