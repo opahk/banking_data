@@ -31,9 +31,8 @@ module BankingData
           to eq([])
       end
 
-      it 'all blz except two exceptions consist of 8 digits' do
-        exceptions = []
-        blzs = GermanBank.only(:blz).map(&:first) - exceptions
+      it 'all blz consist of 8 digits' do
+        blzs = GermanBank.only(:blz).map(&:first)
         expect(blzs.select{ |blz| !( blz =~  /\A\d{8}\z/ ) }).
           to eq([])
       end
