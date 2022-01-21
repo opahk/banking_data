@@ -31,7 +31,7 @@ class BankingData::GermanBank < BankingData::Bank
       end
 
       def file
-        File.dirname(__FILE__) + '/../../data/blz_2021_03_16.txt'
+        File.dirname(__FILE__) + '/../../data/blz_2021_12_06.txt'
       end
   end
 end

@@ -22,6 +22,20 @@ module BankingData
             .to eq([blz])
         end
       end
+
+      it 'all bics are blank or look like bics' do
+        bics = GermanBank.only(:bic).map(&:first)
+        # regular expression: the bic should have 11 characters, that are either
+        # all white space or consist of capital letters and digits
+        expect(bics.select{ |bic| !( bic =~  /\A(\s|([A-Z]|\d)){11}\z/ ) }).
+          to eq([])
+      end
+
+      it 'all blz consist of 8 digits' do
+        blzs = GermanBank.only(:blz).map(&:first)
+        expect(blzs.select{ |blz| !( blz =~  /\A\d{8}\z/ ) }).
+          to eq([])
+      end
     end
   end
 end
