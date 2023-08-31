@@ -3,7 +3,7 @@
 ## updating the files
 
 #### download and replace files (mind the specs)
-* https://www.oenb.at/idakilz/kiverzeichnis?action=toDownloadPage
+* https://www.oenb.at/Statistik/Klassifikationen/SEPA-Zahlungsverkehrs-Verzeichnis.html
 * https://www.six-interbank-clearing.com/de/home/bank-master-data/download-bc-bank-master.html
 * https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/download-bankleitzahlen-602592
 * https://www.betaalvereniging.nl/aandachtsgebieden/giraal-betalingsverkeer/bic-sepa-transacties/
